@@ -5,4 +5,4 @@ WordPressのギャラリーブロックは、手軽に画像の一覧表示を�
 
 このプラグインを使うと、クリックした画像を同じページ内で大きく表示することができるようになります。
 
-
+![サンプル画像](https://github.com/SeiichiN/billies_image_view/blob/master/Screenshot.png "サンプル画像")
