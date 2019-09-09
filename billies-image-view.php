@@ -3,7 +3,7 @@
  * @wordpress-plugin
  * Plugin Name: Billies Image View
  * Description: Thumbnail images viewer. Shortcode is "[insert_billies_image_view]". 大きな画像を表示したい箇所で、ショートコードを貼り付けてください。
- * Version: 0.2
+ * Version: 0.3
  * Author: Seiichi Nukayama
  * Author URI: http://www.billies-works.com/
  */
