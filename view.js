@@ -1,12 +1,13 @@
 // view.js
+
 'use strict';
 
 (function () {
 	var i, imgs, imgcap,
-	eles, imageLargeEle, targetFigcap, targetImg,
-	setClick;
+        eles, imageLargeEle, targetFigcap, targetImg,
+        setClick;
 
-	eles = document.getElementsByClassName('blocks-gallery-item');
+    eles = document.getElementsByClassName('blocks-gallery-item');
 	imageLargeEle = document.getElementById('image-large');
 	targetFigcap = document.getElementById('figcap');
 	targetImg = document.createElement('img'); // img要素を作成
@@ -14,14 +15,12 @@
 	// クリックすると、クリックした画像とキャプションを読み込み、
 	// 作成した img要素の画像・キャプションとする
 	setClick = function (i) {
-		eles[i].addEventListener('click', function() {
+		eles[i].addEventListener('click', function () {
 			imgs = eles[i].getElementsByTagName('img'); // HtmlCollection
-			if (eles[i].getElementsByTagName('figcaption').textContent) {
-			  imgcap = eles[i].getElementsByTagName('figcaption'); // HtmlCollection
-			}
-		  else {
-			imgcap = [{textContent: ""}];
-		  }
+            imgcap = eles[i].getElementsByTagName('figcaption'); // HtmlCollection
+            if (imgcap.length === 0) {
+                imgcap = [{textContent: ""}];
+            }
 
 			targetImg.setAttribute('src', imgs[0].src);
 			targetImg.setAttribute('alt', imgcap[0].textContent);
@@ -32,13 +31,11 @@
 	// 初期設定
 	// ギャラリーの最初の画像とキャプションを読み込む
 	imgs = eles[0].getElementsByTagName('img');
-	if ( eles[0].getElementsByTagName('figcaption').textContent ) {
-	  imgcap = eles[0].getElementsByTagName('figcaption');
-	}
-  else {
-	imgcap = [{textContent: ""}];
-  }
-	
+    imgcap = eles[0].getElementsByTagName('figcaption'); // HtmlCollection
+    if (imgcap.length === 0) {
+        imgcap = [{ textContent: "" }];
+    }
+    
 	// 作成した img要素を <figure> の最初の子要素とする
 	imageLargeEle.insertBefore(targetImg, imageLargeEle.firstChild);
 	// ギャラリーの最初の画像とキャプションに設定
@@ -46,7 +43,7 @@
 	targetImg.setAttribute('alt', imgcap[0].textContent);
 	targetFigcap.textContent = imgcap[0].textContent;
 
-	for (i = 0; i < eles.length; i++) {
+	for (i = 0; i < eles.length; i = i + 1) {
 		setClick(i);
 	}
 })();
