@@ -13,6 +13,7 @@ function billies_image_view_addfiles() {
 	wp_localize_script('view_js', 'view_vars', array(
 		'path' => plugins_url('', __FILE__),
 	));
+  wp_enqueue_style('view.css', plugins_url('view.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'billies_image_view_addfiles');
 
@@ -32,3 +33,5 @@ function dispImage() {
 }
 add_shortcode('insert_billies_image_view', 'dispImage');
 
+
+/* 修正時刻: Fri Aug  6 10:30:16 2021 */
