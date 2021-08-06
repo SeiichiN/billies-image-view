@@ -24,7 +24,19 @@
 
 			targetImg.setAttribute('src', imgs[0].src);
 			targetImg.setAttribute('alt', imgcap[0].textContent);
-			targetFigcap.textContent = imgcap[0].textContent;
+		  targetFigcap.textContent = imgcap[0].textContent;
+
+          // フェードイン
+          targetImg.animate (
+            [
+              {opacity: 0},
+              {opacity: 1}
+            ],
+            {
+              duration: 800,
+              fill: 'forwards'
+            }
+          );
 		}, false);
 	};
 
@@ -47,3 +59,5 @@
 		setClick(i);
 	}
 })();
+
+// 修正時刻: Fri Aug  6 10:00:15 2021
